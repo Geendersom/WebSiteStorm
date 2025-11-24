@@ -1,0 +1,1036 @@
+/* RESET CSS E CONFIGURAÇÕES BASE */
+
+/* Reset universal para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações base do body */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Container principal com largura máxima e centralização */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* VARIÁVEIS CSS - PALETA DE CORES E EFEITOS */
+
+/* Definindo variáveis CSS para cores, sombras e espaçamentos */
+:root {
+    /* Cores principais */
+    --primary-color: #0a79b0;      /* Azul principal */
+    --primary-dark: #004173;       /* Azul escuro para hover */
+    --primary-light: #1e8bc4;      /* Azul claro para gradientes */
+    --secondary-color: #f59e0b;    /* Laranja/dourado */
+    --accent-color: #10b981;       /* Verde para checkmarks */
+    
+    /* Cores de texto */
+    --text-primary: #1f2937;       /* Texto principal */
+    --text-secondary: #6b7280;     /* Texto secundário */
+    --text-light: #9ca3af;         /* Texto claro */
+    
+    /* Cores de fundo */
+    --bg-primary: #ffffff;         /* Fundo branco */
+    --bg-secondary: #f9fafb;       /* Fundo cinza claro */
+    --bg-dark: #111827;            /* Fundo escuro */
+    
+    /* Bordas */
+    --border-color: #e5e7eb;       /* Cor das bordas */
+    
+    /* Sombras em diferentes níveis */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* ESTILOS DOS BOTÕES - COMPONENTES DE INTERAÇÃO */
+
+/* Estilos base para todos os tipos de botão */
+.btn-primary, .btn-secondary, .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+/* Botão primário - cor principal do site */
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Efeito hover para botão primário */
+.btn-primary:hover {
+    background: #004173;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Botão secundário - transparente com borda */
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+/* Efeito hover para botão secundário */
+.btn-secondary:hover {
+    background: var(--bg-secondary);
+    border-color: #0a79b0;
+    transform: translateY(-2px);
+}
+
+/* Botão outline - apenas borda colorida */
+.btn-outline {
+    background: transparent;
+    color: #0a79b0;
+    border: 2px solid #0a79b0;
+}
+
+/* Efeito hover para botão outline */
+.btn-outline:hover {
+    background: #0a79b0;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Tamanho grande para botões de destaque */
+.btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+/* HEADER - NAVEGAÇÃO PRINCIPAL FIXA */
+
+/* Header fixo no topo da página */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Container da navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80px;
+}
+
+/* Logo da empresa */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0a79b0;
+}
+
+/* Imagem da logo */
+.logo-image {
+    height: 45px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+/* Logo maior no header de navegação */
+.nav-logo .logo-image {
+    height: 55px;
+    max-width: 250px;
+}
+
+/* Menu de navegação principal */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+/* Links do menu */
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efeito hover nos links do menu */
+.nav-menu a:hover {
+    color: #0a79b0;
+}
+
+/* Menu hambúrguer para mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+/* Linhas do menu hambúrguer */
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* SEÇÃO HERO - APRESENTAÇÃO PRINCIPAL */
+
+/* Container principal da seção hero */
+.hero {
+    margin-top: 80px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: linear-gradient(135deg, #0a79b0 0%, #004173 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Padrão decorativo de fundo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
+    opacity: 0.3;
+}
+
+/* Layout do conteúdo hero */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Título principal */
+.hero-text h1 {
+    font-size: 42px;
+    font-weight: 700; /* peso da fonte negrito */
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+/* Destaque no título com gradiente */
+.highlight {
+    background: linear-gradient(45deg, #fbbf24, #f59e0b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Subtítulo da seção hero */
+.hero-subtitle {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+/* Container dos botões de ação */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 48px;
+}
+
+/* Estilo especial para botão secundário no hero */
+.hero-buttons .btn-secondary {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Hover do botão secundário no hero */
+.hero-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* Container das estatísticas */
+.hero-stats {
+    display: flex;
+    gap: 40px;
+}
+
+/* Item de estatística individual */
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Número da estatística */
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* Label da estatística */
+.stat-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* MOCKUP DO TELEFONE - INTERFACE WHATSAPP */
+
+/* Container do mockup do telefone */
+.phone-mockup {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Tela do telefone */
+.phone-screen {
+    background: #1a1a1a;
+    border-radius: 30px;
+    padding: 10px;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+}
+
+/* Interface simulada do WhatsApp */
+.whatsapp-interface {
+    background: #e5ddd5;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 500px;
+}
+
+/* Cabeçalho do chat */
+.chat-header {
+    background: #075e54;
+    padding: 16px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Informações do contato */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Avatar do contato */
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Detalhes do contato */
+.contact-details h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.contact-details span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Área das mensagens do chat */
+.chat-messages {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+/* Estilo base das mensagens */
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    color: #000000;
+}
+
+/* Mensagem do bot */
+.bot-message {
+    background: white;
+    align-self: flex-start;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Mensagem do usuário */
+.user-message {
+    background: #dcf8c6;
+    align-self: flex-end;
+}
+
+/* SEÇÃO FUNCIONALIDADES - PRINCIPAIS RECURSOS */
+
+/* Container da seção de funcionalidades */
+.features {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+/* Cabeçalho padrão das seções */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Título das seções */
+.section-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+/* Subtítulo das seções */
+.section-header p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Grid dos cards de funcionalidades */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+/* Card individual de funcionalidade */
+.feature-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+/* Efeito hover nos cards */
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #0a79b0, #004173);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.feature-icon i {
+    font-size: 36px;
+    color: white;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+.feature-list li::before {
+    content: '✓';
+    color: var(--accent-color);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* SEÇÃO BENEFÍCIOS - VANTAGENS COMPETITIVAS */
+
+/* Container da seção de benefícios */
+.benefits {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.benefits-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.benefits-text h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #0a79b0, #004173);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.benefit-icon i {
+    font-size: 24px;
+    color: white;
+}
+
+.benefit-content h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.benefit-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Dashboard Mockup */
+.dashboard-mockup {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.dashboard-header {
+    background: linear-gradient(135deg, #0a79b0, #004173);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-content {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.metric-card {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.metric-card h5 {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0a79b0;
+}
+
+/* SEÇÃO PREÇOS - PLANOS DE ASSINATURA */
+
+/* Container da seção de preços */
+.pricing {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.pricing-card {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.pricing-card.featured {
+    border: 2px solid #0a79b0;
+    transform: scale(1.05);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #0a79b0, #004173);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.pricing-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+}
+
+.currency {
+    font-size: 20px;
+    color: var(--text-secondary);
+}
+
+.amount {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.period {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--text-secondary);
+}
+
+.pricing-features i {
+    color: var(--accent-color);
+    font-size: 16px;
+}
+
+.pricing-footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* SEÇÃO CTA - CALL TO ACTION FINAL */
+
+/* Container da seção de call-to-action */
+.cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0a79b0, #004173);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.cta-content p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cta-buttons .btn-secondary {
+    color: white;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-buttons .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
+/* SEÇÃO FOOTER - RODAPÉ DO SITE */
+
+/* Container do footer */
+.footer {
+    background: var(--bg-dark);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0a79b0;
+    margin-bottom: 16px;
+}
+
+/* Imagem da logo no footer */
+.footer-logo .logo-image {
+    height: 45px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+}
+
+.footer-section p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #0a79b0;
+}
+
+.social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #0a79b0;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #0a79b0;
+}
+
+/* DESIGN RESPONSIVO - ADAPTAÇÃO MOBILE */
+
+/* Breakpoint para tablets */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .benefits-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .dashboard-content {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajuste da logo em tablets */
+    .logo-image {
+        height: 40px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Ajuste da logo em mobile */
+    .logo-image {
+        height: 35px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 45px;
+    }
+    
+    .footer-logo .logo-image {
+        height: 35px;
+    }
+    
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    
+    .hero-text h1 {
+        font-size: 28px;
+    }
+    
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .feature-card,
+    .pricing-card {
+        padding: 24px;
+    }
+    
+    .benefits-text h2 {
+        font-size: 32px;
+    }
+    
+    .cta-content h2 {
+        font-size: 32px;
+    }
+}
+
+/* ANIMAÇÕES E EFEITOS ESPECIAIS */
+
+/* Animação de entrada suave */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card,
+.pricing-card,
+.benefit-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading States */
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active {
+    transform: translateY(0);
+}
+
+/* Focus States */
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-outline:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
