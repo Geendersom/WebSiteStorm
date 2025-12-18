@@ -61,59 +61,6 @@ WebSiteStorm/
 6. **Call-to-Action** - Seção final de conversão
 7. **Footer** - Links, redes sociais e informações legais
 
-## 🛠️ Como Usar
-
-### Pré-requisitos
-
-Nenhum! Este é um projeto estático que pode ser aberto diretamente no navegador.
-
-### Instalação
-
-1. Clone o repositório:
-```bash
-git clone https://github.com/seu-usuario/WebSiteStorm.git
-```
-
-2. Navegue até o diretório:
-```bash
-cd WebSiteStorm
-```
-
-3. Abra o arquivo `src/index.html` no seu navegador:
-```bash
-# No macOS/Linux
-open src/index.html
-
-# No Windows
-start src/index.html
-```
-
-Ou simplesmente arraste o arquivo `src/index.html` para o navegador.
-
-### Desenvolvimento Local
-
-Para desenvolvimento, você pode usar um servidor local simples:
-
-```bash
-# Python 3
-python3 -m http.server 8000
-
-# Node.js (com http-server)
-npx http-server
-
-# PHP
-php -S localhost:8000
-```
-
-Depois acesse `http://localhost:8000/src/index.html` no navegador.
-
-**Nota:** Se preferir servir diretamente a pasta `src`, navegue até ela antes de iniciar o servidor:
-```bash
-cd src
-python3 -m http.server 8000
-# Depois acesse http://localhost:8000
-```
-
 ## 🎯 Funcionalidades JavaScript
 
 - ✅ Menu mobile responsivo (hambúrguer)
@@ -145,52 +92,9 @@ O website é totalmente responsivo e otimizado para:
 --accent-color: #10b981        /* Verde */
 ```
 
-## 📊 Estatísticas do Projeto
-
-- **1.2K+** Empresas Ativas
-- **244K+** Mensagens Enviadas
-- **97.3%** Uptime
-
-## 🔒 Segurança
-
-Este projeto não contém informações sensíveis no código. Todas as credenciais e configurações devem ser gerenciadas através de variáveis de ambiente ou arquivos de configuração que estão no `.gitignore`.
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Sinta-se à vontade para:
-
-1. Fazer um Fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abrir um Pull Request
-
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
-## 📞 Contato
-
-**StormCHAT**
-
-- Website: [Em breve]
-- Email: contato@stormchat.com.br
-- LinkedIn: [@stormchat](https://linkedin.com/company/stormchat)
-- Instagram: [@stormchat](https://instagram.com/stormchat)
-
-## 🙏 Agradecimentos
-
-- [Font Awesome](https://fontawesome.com/) - Ícones
-- [Google Fonts](https://fonts.google.com/) - Tipografia Inter
-- Comunidade de desenvolvedores open source
-
 ---
-
-<div align="center">
-
-**Desenvolvido com ❤️ pela equipe StormCHAT**
-
-⭐ Se este projeto foi útil, considere dar uma estrela!
-
-</div>
 
